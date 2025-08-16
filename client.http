@@ -1,0 +1,24 @@
+### welcome
+
+GET http://localhost:3000/welcome
+
+
+### convert - success
+POST http://localhost:3000/convert
+Content-Type: application/json
+
+{
+"from":"USD",
+"to":"BRL",
+"value":100
+}
+
+
+### convert - error Missing a field
+
+POST http://localhost:3000/convert
+
+{
+  "to":"USD",
+  "value":100
+}
