@@ -1,15 +1,26 @@
 {
     "name": "currency-convert",
     "version": "1.0.0",
-    "description": "",
     "main": "server.ts",
     "scripts": {
-        "start": "node ."
+        "lint": "eslint src/**/*.ts",
+        "format": "eslint src/**/*.ts --fix",
+        "start": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules server.ts",
+        "prod": "node .",
+        "build": "tsc",
+        "prettier": "prettier --write \"{src,test}/**/*.{js,ts}\"",
+        "test": "jest"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "type": "module",
+    "keywords": [
+        "NodeJS",
+        "Typescript",
+        "REST",
+        "Layers",
+        "Integration"
+    ],
+    "author": "José Lucas",
+    "license": "MIT",
+    "description": "",
     "dependencies": {
         "axios": "^1.11.0",
         "dotenv": "^17.2.1",
