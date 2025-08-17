@@ -11,10 +11,5 @@
         "allowJs": true,
         "sourceMap": true
     },
-    "include": [
-        "src/**/*.ts",
-        "server.ts",
-        "src/test/unit/*.ts",
-        "src/test/integration/*.ts"
-    ]
+    "include": ["src/**/*.ts", "server.ts", "src/test/**/*.ts"]
 }
