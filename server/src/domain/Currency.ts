@@ -1,7 +1,7 @@
 export enum Currency {
-    USD,
-    BRL,
-    EUR,
-    JOD,
-    CAD,
+    USD = 'USD',
+    BRL = 'BRL',
+    EUR = 'EUR',
+    JOD = 'JOD',
+    CAD = 'CAD',
 }
