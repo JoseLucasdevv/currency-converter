@@ -4,7 +4,7 @@ import converterResource from '../resources/converterResource';
 
 const router = express.Router();
 
-router.get('/welcome', (req, res: Response) => {
+router.get('/api/v1/welcome', (req: Request, res: Response) => {
     res.send(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +39,6 @@ router.get('/welcome', (req, res: Response) => {
 </html>
 `);
 });
-router.post('/convert', converterResource);
+router.post('/api/v1/convert', converterResource);
 
 export = router;
