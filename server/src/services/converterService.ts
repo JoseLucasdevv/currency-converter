@@ -4,7 +4,9 @@ import CurrencyDTO from '../types/CurrencyDTO';
 import { CurrencyResponseDTO } from '../types/CurrencyResponseDTO';
 import requestApi from './requestConverterApi';
 
-export default async function converterService(currencyDTO: CurrencyDTO) {
+export default async function converterService(
+    currencyDTO: CurrencyDTO
+): Promise<CurrencyResponseDTO> {
     if (currencyDTO.value < 1) {
         throw new ApiError(
             400,
@@ -22,7 +24,7 @@ export default async function converterService(currencyDTO: CurrencyDTO) {
     if (!Object.values(Currency).includes(currencyDTO.to as Currency)) {
         throw new ApiError(
             400,
-            'The value for FROM is not supported',
+            'The value for TO is not supported',
             'UNSUPPORTED VALUE'
         );
     }
@@ -39,9 +41,7 @@ export default async function converterService(currencyDTO: CurrencyDTO) {
         currencyDTO.to.toString()
     );
 
-    const resultSum: number = Number(
-        (differenceBetween * currencyDTO.value).toFixed(2)
-    );
+    const resultSum: number = Number(differenceBetween * currencyDTO.value);
 
     const currencyResponseDTO: CurrencyResponseDTO = {
         result: resultSum,
