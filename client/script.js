@@ -33,8 +33,10 @@ button.addEventListener("click", async (e) => {
   if (response[1] > 399) {
     result.style.color = "red";
     result.innerText = response[0].message;
+    result.style.fontSize = "18px";
   } else {
     result.style.color = "green";
     result.innerText = response[0].result.toFixed(2);
+    result.style.fontSize = "45px";
   }
 });
