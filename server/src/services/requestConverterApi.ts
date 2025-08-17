@@ -22,8 +22,6 @@ export default async function requestApi(
 
         return result;
     } catch (e: any) {
-      
-        console.error(e.message);
         throw new ApiError(500, e.message, 'INTERNAL_SERVER_ERROR');
     }
 }
